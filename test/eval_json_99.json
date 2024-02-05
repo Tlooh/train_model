@@ -1,0 +1,497 @@
+[
+    {
+        "idx": 0,
+        "text": "a boy jumping off a wall",
+        "entity": "('boy', 'wall')"
+    },
+    {
+        "idx": 1,
+        "text": "a white robot, a red robot and a black robot standing together",
+        "entity": "('robot',)"
+    },
+    {
+        "idx": 2,
+        "text": "a volcano with lava pouring down its slopes",
+        "entity": "('volcano', 'lava', 'slopes')"
+    },
+    {
+        "idx": 3,
+        "text": "a team playing baseball",
+        "entity": "('team', 'baseball')"
+    },
+    {
+        "idx": 4,
+        "text": "A photo of a frog reading the newspaper named \"Toaday\" written on it. There is a frog printed on the newspaper too.",
+        "entity": "('photo', 'frog', 'newspaper', 'Toaday')"
+    },
+    {
+        "idx": 5,
+        "text": "panda mad scientist mixing sparkling chemicals, high-contrast painting",
+        "entity": "('scientist', 'chemicals', 'panda')"
+    },
+    {
+        "idx": 6,
+        "text": "an oil painting of a cat playing checkers",
+        "entity": "('painting', 'cat', 'checkers')"
+    },
+    {
+        "idx": 7,
+        "text": "A DSLR photo of a shiny VW van that has a cityscape painted on it. A smiling sloth stands on grass in front of the van and is wearing a leather jacket, a cowboy hat, a kilt and a bowtie. The sloth is holding a quarterstaff and a big book.",
+        "entity": "('photo', 'van', 'cityscape', 'grass', 'jacket', 'hat', 'kilt', 'bowtie', 'quarterstaff', 'book', 'sloth')"
+    },
+    {
+        "idx": 8,
+        "text": "a stone path leading away from a fountain",
+        "entity": "('path', 'fountain')"
+    },
+    {
+        "idx": 9,
+        "text": "a horse corral with tigers standing in each stall",
+        "entity": "('horse corral', 'tigers', 'stall')"
+    },
+    {
+        "idx": 10,
+        "text": "a cricketer standing next to a wicket",
+        "entity": "('cricketer', 'wicket')"
+    },
+    {
+        "idx": 11,
+        "text": "a panda bear playing ping pong using a blue paddle against an ostrich using a red paddle",
+        "entity": "('panda', 'ping pong', 'paddle', 'ostrich')"
+    },
+    {
+        "idx": 12,
+        "text": "an ornate gold harp",
+        "entity": "('harp',)"
+    },
+    {
+        "idx": 13,
+        "text": "a mixed media image with a photograph of a woman with long orange hair over a background that is a sketch of a city skyline",
+        "entity": "('image', 'photograph', 'woman', 'hair', 'background', 'sketch', 'skyline', 'city')"
+    },
+    {
+        "idx": 14,
+        "text": "a large present with a red ribbon to the left of a Christmas tree",
+        "entity": "('present', 'ribbon', 'Christmas tree')"
+    },
+    {
+        "idx": 15,
+        "text": "a cow eating a green leafy plant",
+        "entity": "('cow', 'plant')"
+    },
+    {
+        "idx": 16,
+        "text": "a green pyramid in front of a blue box",
+        "entity": "('pyramid', 'box')"
+    },
+    {
+        "idx": 17,
+        "text": "a tall horse next to a red car",
+        "entity": "(' horse', 'car')"
+    },
+    {
+        "idx": 18,
+        "text": "a large white yacht tossed about in a stormy sea",
+        "entity": "('yacht', 'stormy sea')"
+    },
+    {
+        "idx": 19,
+        "text": "a yellow t-shirt with a dog on it",
+        "entity": "('t-shirt', 'dog')"
+    },
+    {
+        "idx": 20,
+        "text": "a white towel",
+        "entity": "('towel',)"
+    },
+    {
+        "idx": 21,
+        "text": "a pair of headphones on a statue of a horse",
+        "entity": "('headphones', 'statue', 'horse')"
+    },
+    {
+        "idx": 22,
+        "text": "a dutch baroque painting of a horse in a field of flowers",
+        "entity": "('painting', 'horse', 'field', 'flowers')"
+    },
+    {
+        "idx": 23,
+        "text": "a diagram of brain function",
+        "entity": "('diagram', 'brain')"
+    },
+    {
+        "idx": 24,
+        "text": "a black towel",
+        "entity": "('towel',)"
+    },
+    {
+        "idx": 25,
+        "text": "a tall man stooping down to enter a low red sports car",
+        "entity": "('man', 'car')"
+    },
+    {
+        "idx": 26,
+        "text": "a rabbit sitting on a turtle's back",
+        "entity": "('rabbit', 'turtle')"
+    },
+    {
+        "idx": 27,
+        "text": "two chemtrails forming an X in blue sky",
+        "entity": "('chemtrails', 'X', 'sky')"
+    },
+    {
+        "idx": 28,
+        "text": "a yellow wall with two framed sketches",
+        "entity": "('wall', 'sketches')"
+    },
+    {
+        "idx": 29,
+        "text": "a pickup truck missing its wheels",
+        "entity": "('truck', 'wheels')"
+    },
+    {
+        "idx": 30,
+        "text": "a flower",
+        "entity": "('flower',)"
+    },
+    {
+        "idx": 31,
+        "text": "a woman with long black hair and dark skin",
+        "entity": "('woman', 'hair', 'skin')"
+    },
+    {
+        "idx": 32,
+        "text": "a cloud in the shape of a castle",
+        "entity": "('cloud', 'castle')"
+    },
+    {
+        "idx": 33,
+        "text": "A photo of an Athenian vase with a painting of toucans playing tennis in the style of Egyptian hieroglyphics",
+        "entity": "('photo', 'vase', 'painting', 'toucans', 'tennis')"
+    },
+    {
+        "idx": 34,
+        "text": "a fire hydrant",
+        "entity": "('fire hydrant',)"
+    },
+    {
+        "idx": 35,
+        "text": "a penguin standing on a sidewalk",
+        "entity": "('penguin', 'sidewalk')"
+    },
+    {
+        "idx": 36,
+        "text": "the hands of a single person holding a basketball",
+        "entity": "('hands', 'person', 'basketball')"
+    },
+    {
+        "idx": 37,
+        "text": "A penguin wearing aviator goggles and flying confidently next to a bemused eagle.",
+        "entity": "('penguin', 'goggles', 'eagle')"
+    },
+    {
+        "idx": 38,
+        "text": "a small garden with an apple tree behind it",
+        "entity": "('garden', 'tree')"
+    },
+    {
+        "idx": 39,
+        "text": "The saying \"BE EXCELLENT TO EACH OTHER\" written with carved letters on driftwood.",
+        "entity": "('BE EXCELLENT TO EACH OTHER', 'letters', 'driftwood')"
+    },
+    {
+        "idx": 40,
+        "text": "a yellow fire hydrant in grass",
+        "entity": "('hydrant', 'grass')"
+    },
+    {
+        "idx": 41,
+        "text": "a spaceship hovering over The Alamo",
+        "entity": "('spaceship', 'Alamo')"
+    },
+    {
+        "idx": 42,
+        "text": "a field with ten massive modern windmills",
+        "entity": "('field', 'windmills')"
+    },
+    {
+        "idx": 43,
+        "text": "A castle made of tortilla chips, in a river made of salsa. There are tiny burritos walking around the castle",
+        "entity": "('castle', 'tortilla chips', 'river', 'salsa', 'burritos')"
+    },
+    {
+        "idx": 44,
+        "text": "A set of 2x2 emoji icons with happy, angry, surprised and sobbing faces. The emoji icons look like pigs. All of the pigs are wearing crowns.",
+        "entity": "('emoji icons', 'faces', 'pigs', 'crowns')"
+    },
+    {
+        "idx": 45,
+        "text": "a mountain stream with salmon leaping out of it",
+        "entity": "('stream', 'salmon')"
+    },
+    {
+        "idx": 46,
+        "text": "an owl standing on a wire",
+        "entity": "('owl', 'wire')"
+    },
+    {
+        "idx": 47,
+        "text": "a series of musical notes on a black t-shirt",
+        "entity": "('musical notes', 't-shirt')"
+    },
+    {
+        "idx": 48,
+        "text": "a TV on a horse",
+        "entity": "('TV', 'horse')"
+    },
+    {
+        "idx": 49,
+        "text": "A tornado made of bees crashing into a skyscraper. painting in the style of watercolor.",
+        "entity": "('tornado', 'bees', 'skyscraper', 'painting')"
+    },
+    {
+        "idx": 50,
+        "text": "a cartoon of a bear birthday party",
+        "entity": "('cartoon', 'party')"
+    },
+    {
+        "idx": 51,
+        "text": "Face of an orange frog in cartoon style",
+        "entity": "('frog', 'Face')"
+    },
+    {
+        "idx": 52,
+        "text": "an abstract painting of three triangles in blue, yellow and red",
+        "entity": "('triangles', 'painting')"
+    },
+    {
+        "idx": 53,
+        "text": "an abstract oil painting in deep red and black with a thick patches of white",
+        "entity": "('painting', 'patches')"
+    },
+    {
+        "idx": 54,
+        "text": "graffiti spelling BE KIND on white subway tile",
+        "entity": "('graffiti', 'tile', 'BE KIND')"
+    },
+    {
+        "idx": 55,
+        "text": "Oil painting generated by artificial intelligence",
+        "entity": "('painting', 'artificial intelligence')"
+    },
+    {
+        "idx": 56,
+        "text": "an abstract painting of a house on a mountain",
+        "entity": "('painting', 'house', 'mountain')"
+    },
+    {
+        "idx": 57,
+        "text": "an abstract painting of the Empire State Building",
+        "entity": "('painting', 'Building')"
+    },
+    {
+        "idx": 58,
+        "text": "a sketch of a skyscraper",
+        "entity": "('sketch', 'skyscraper')"
+    },
+    {
+        "idx": 59,
+        "text": "the skyline of New York City",
+        "entity": "('skyline', 'City')"
+    },
+    {
+        "idx": 60,
+        "text": "A wombat sits in a yellow beach chair, while sipping a martini that is on his laptop keyboard. The wombat is wearing a white panama hat and a floral Hawaiian shirt. Out-of-focus palm trees in the background.",
+        "entity": "('wombat', 'chair', 'martini', 'keyboard', 'hat', 'shirt', 'trees')"
+    },
+    {
+        "idx": 61,
+        "text": "A photo of an Athenian vase with a painting of pandas playing tennis in the style of Egyptian hieroglyphics",
+        "entity": "('photo', 'vase', 'painting', 'pandas', 'tennis')"
+    },
+    {
+        "idx": 62,
+        "text": "a very fancy French restaurant",
+        "entity": "('restaurant',)"
+    },
+    {
+        "idx": 63,
+        "text": "A close-up high-contrast photo of Sydney Opera House sitting next to Eiffel tower, under a blue night sky of roiling energy, exploding yellow stars, and radiating swirls of blue",
+        "entity": "('photo', 'Opera House', 'Eiffel tower', 'night sky', 'energy', 'stars', 'swirls')"
+    },
+    {
+        "idx": 64,
+        "text": "A solitary figure shrouded in mists peers up from the cobble stone street at the imposing and dark gothic buildings surrounding it. an old-fashioned lamp shines nearby. oil painting.",
+        "entity": "('figure', 'mists', 'street', 'buildings', 'lamp', 'painting', 'cobble stone')"
+    },
+    {
+        "idx": 65,
+        "text": "a street in Paris",
+        "entity": "('street',)"
+    },
+    {
+        "idx": 66,
+        "text": "Three-quarters front view of a blue 1977 Corvette coming around a curve in a mountain road and looking over a green valley on a cloudy day.",
+        "entity": "('view', 'Corvette', 'curve', 'road', 'valley')"
+    },
+    {
+        "idx": 67,
+        "text": "A photograph in a temple of a wall painting depicting pandas playing tennis, in the style of Egyptian tomb hieroglyphics",
+        "entity": "('photograph', 'temple', 'wall painting', 'pandas', 'tennis')"
+    },
+    {
+        "idx": 68,
+        "text": "a map of Texas",
+        "entity": "('map',)"
+    },
+    {
+        "idx": 69,
+        "text": "a woman using a sledgehammer to smash an ice sculpture of a goose",
+        "entity": "('woman', 'sledgehammer', 'ice sculpture', 'goose')"
+    },
+    {
+        "idx": 70,
+        "text": "a young girl playing piano",
+        "entity": "('young girl', 'piano')"
+    },
+    {
+        "idx": 71,
+        "text": "a thumbnail image of a person skiing",
+        "entity": "('image', 'person')"
+    },
+    {
+        "idx": 72,
+        "text": "a team playing baseball at the beach",
+        "entity": "('team', 'baseball', 'beach')"
+    },
+    {
+        "idx": 73,
+        "text": "The Statue of Liberty",
+        "entity": "('Statue of Liberty',)"
+    },
+    {
+        "idx": 74,
+        "text": "a portrait of a statue of the Egyptian god Anubis wearing aviator goggles, white t-shirt and leather jacket. The city of Los Angeles is in the background.",
+        "entity": "('statue', 'Anubis', 'goggles', 't-shirt', 'jacket', 'Los Angeles', 'background')"
+    },
+    {
+        "idx": 75,
+        "text": "a child eating a birthday cake near some palm trees",
+        "entity": "('child', 'cake', 'trees')"
+    },
+    {
+        "idx": 76,
+        "text": "Renaissance portrayals of the Virgin Mary, seated in a loggia. Behind her is a hazy and seemingly isolated landscape imagined by the artist and painted using sfumato.",
+        "entity": "('portrayals', 'Virgin Mary', 'loggia', 'landscape')"
+    },
+    {
+        "idx": 77,
+        "text": "a comic about a boy going to school",
+        "entity": "('comic', 'boy', 'school')"
+    },
+    {
+        "idx": 78,
+        "text": "a Saint Bernard standing up with its paws in the air. A young girl is seated on the dog's shoulders.",
+        "entity": "('Saint Bernard', 'paws', 'air', 'young girl', 'dog', 'shoulders')"
+    },
+    {
+        "idx": 79,
+        "text": "a woman looking at a house",
+        "entity": "('woman', 'house')"
+    },
+    {
+        "idx": 80,
+        "text": "a river with people swimming in it as a boat goes by",
+        "entity": "('river', 'people', 'boat')"
+    },
+    {
+        "idx": 81,
+        "text": "a person",
+        "entity": "('person',)"
+    },
+    {
+        "idx": 82,
+        "text": "a man chasing a horse",
+        "entity": "('man', 'horse')"
+    },
+    {
+        "idx": 83,
+        "text": "a woman with tan skin in blue jeans and yellow shirt",
+        "entity": "('woman', 'skin', 'jeans', 'shirt')"
+    },
+    {
+        "idx": 84,
+        "text": "a girl with long curly blonde hair and sunglasses",
+        "entity": "('girl', 'hair', 'sunglasses')"
+    },
+    {
+        "idx": 85,
+        "text": "a black dog jumping up to hug a woman wearing a red sweater",
+        "entity": "('dog', 'woman', 'sweater')"
+    },
+    {
+        "idx": 86,
+        "text": "a woman running on a trail",
+        "entity": "('woman', 'trail')"
+    },
+    {
+        "idx": 87,
+        "text": "A man sips a latte and a woman a beer.",
+        "entity": "('man', 'latte', 'woman', 'beer')"
+    },
+    {
+        "idx": 88,
+        "text": "a man with long blonde hair, brown eyes and blue jeans",
+        "entity": "('man', 'hair', 'eyes', 'jeans')"
+    },
+    {
+        "idx": 89,
+        "text": "a painting of a man standing under a tree",
+        "entity": "('painting', 'man', 'tree')"
+    },
+    {
+        "idx": 90,
+        "text": "close-up portrait of a smiling businesswoman holding a cell phone, oil painting in the style of Rembrandt",
+        "entity": "('portrait', 'businesswoman', 'phone', 'painting')"
+    },
+    {
+        "idx": 91,
+        "text": "the statue of Liberty next to the Washington Monument",
+        "entity": "('statue of Liberty', 'Monument')"
+    },
+    {
+        "idx": 92,
+        "text": "a man eating a glazed donut and a woman eating a chocolate cake",
+        "entity": "('man', 'donut', 'woman', 'cake')"
+    },
+    {
+        "idx": 93,
+        "text": "a pumpkin on a man's head",
+        "entity": "('pumpkin', 'man', 'head')"
+    },
+    {
+        "idx": 94,
+        "text": "A high resolution photo of a donkey in a clown costume giving a lecture at the front of a lecture hall. The blackboard has mathematical equations on it. There are many students in the lecture hall.",
+        "entity": "('photo', 'donkey', 'costume', 'lecture', 'lecture hall', 'blackboard', 'equations', 'students')"
+    },
+    {
+        "idx": 95,
+        "text": "a toaster shaking hands with a microwave",
+        "entity": "('toaster', ' hands', 'microwave')"
+    },
+    {
+        "idx": 96,
+        "text": "Ground view of the Great Pyramids and Sphinx on the moon's surface. The back of an astronaut is in the foreground. The planet Earth looms in the sky.",
+        "entity": "('view', 'Pyramids', 'Sphinx', 'moon', 'surface', 'back', 'astronaut', 'Earth', 'sky')"
+    },
+    {
+        "idx": 97,
+        "text": "A close-up of two mantis wearing karate uniforms and fighting, jumping over a waterfall.",
+        "entity": "('close-up', 'mantis', 'uniforms', 'waterfall')"
+    },
+    {
+        "idx": 98,
+        "text": "A teddybear on a skateboard in Times Square, doing tricks on a cardboard box ramp.",
+        "entity": "('teddybear', 'skateboard', 'Square', 'cardboard box', 'ramp')"
+    }
+]
