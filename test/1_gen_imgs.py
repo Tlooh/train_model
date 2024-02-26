@@ -188,7 +188,7 @@ def main(args, unet):
     gen_loader = DataLoader(gen_dataset, batch_size=args.batch_size)
 
     for i, batch_data in tqdm(enumerate(gen_loader), total = len(gen_loader)):
-        batch_ids, batch_texts, batch_entity = batch_data['idx'], batch_data['text'], batch_data['entity']
+        batch_ids, batch_texts, batch_entity = batch_data['id'], batch_data['prompt'], batch_data['entity']
         
         # fixed seed
         g = torch.Generator(device=device).manual_seed(args.seed)
@@ -211,17 +211,29 @@ def main(args, unet):
 if __name__ == "__main__":
     args = parse_args()
 
-    ckpt_list = args.checkpoints.split(",")
+    ckpt_list = [
+        "/data/liutao/checkpoints/SD_1-4/S2C_rank",
+        "/data/liutao/checkpoints/SD_1-4/rank_offline_3", 
+        "/data/liutao/checkpoints/SD_1-4/rank_offline_4",
+        "/data/liutao/checkpoints/SD_1-4/rank_offline_7",
+        ]
+    ckpt_list = [
+        "SD1.4",
+        "/data/liutao/checkpoints/SD_1-4/refl"
+        ]
+    # ckpt_list = ["/data/liutao/checkpoints/SD_1-4/S2C_rank"]
+    ckpt_list = ["/data/liutao/checkpoints/SD_1-4/refl_myreward"]
+    ckpt_list = ["/data/liutao/checkpoints/SD_1-4/T2I"]
+    print("Generate Images with CKPT_LIST:")
     print(ckpt_list)
-
     for ckpt in ckpt_list:
         if ckpt == 'SD1.4':
             unet = UNet2DConditionModel.from_pretrained("CompVis/stable-diffusion-v1-4", subfolder="unet", torch_dtype=torch.float32)
         else:
             weight_dir = "/data/liutao/checkpoints/SD_1-4"
-            unet = UNet2DConditionModel.from_pretrained(f"{weight_dir}/{ckpt}/checkpoint-{args.steps}/unet", torch_dtype=torch.float32)
+            unet = UNet2DConditionModel.from_pretrained(f"{ckpt}/checkpoint-{args.steps}/unet", torch_dtype=torch.float32)
         
-        args.ckpt_name = ckpt
+        args.ckpt_name = ckpt.split("/")[-1]
         args.img_save_dir = os.path.join(args.img_dir, args.ckpt_name)
         create_folder_if_not_exists(args.img_save_dir)
         
@@ -229,5 +241,10 @@ if __name__ == "__main__":
 
 
 """
-python 1_gen_imgs.py --gpu_id 7 --checkpoints SD1.4,refl,rank_offline,rank_offline_gpu4
+python 1_gen_imgs.py --gpu_id 0
+
+python 1_gen_imgs.py --gpu_id 0 --json_path "/home/linhaojia/liutao/train_model/test/eval_1624.json"  --img_dir "/data/liutao/images_1624"
+
+
+python 1_gen_imgs.py --gpu_id 6 --json_path "/home/linhaojia/liutao/train_model/test/eval_1624.json"  --img_dir "/data/liutao/images_1624"
 """

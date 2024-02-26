@@ -76,6 +76,13 @@ def parse_args():
         "--grad_scale", type=float, default=1e-3, help="Scale divided for grad loss value."
     )
     parser.add_argument(
+        "--rank_ids",
+        type=str,
+        default="1,4,7",
+        required=True,
+        help="Rank ids ot cal offline_loss",
+    )
+    parser.add_argument(
         "--input_pertubation", type=float, default=0, help="The scale of input pretubation. Recommended 0.1."
     )
     parser.add_argument(
@@ -366,6 +373,8 @@ def parse_args():
     # default to using the same revision for the non-ema model if not specified
     if args.non_ema_revision is None:
         args.non_ema_revision = args.revision
+    
+    args.rank_ids = [int(id) for id in args.rank_ids.split(",")]
 
     return args
 
@@ -539,7 +548,7 @@ def main():
                 data_path = args.train_data_dir,
                 clip_tokenizer = tokenizer,
                 blip_tokenizer = reward_model.blip.tokenizer,
-                rank_list = [1, 4, 7] # start from 1
+                rank_list = args.rank_ids # start from 1
             )
 
     # DataLoaders creation:
@@ -612,6 +621,7 @@ def main():
     logger.info(f"  Total train batch size (w. parallel, distributed & accumulation) = {total_batch_size}")
     logger.info(f"  Gradient Accumulation steps = {args.gradient_accumulation_steps}")
     logger.info(f"  Total optimization steps = {args.max_train_steps}")
+    logger.info(f"  Rank List to cal offline loss = {args.rank_ids}")
     global_step = 0
     first_epoch = 0
 
@@ -711,10 +721,9 @@ def main():
                 batch_scores_off = torch.stack(batch['score_list'], dim=0) #[num_rank, bsz]
 
                 loss_offline = rank_offline_loss2(batch_scores_off)
-                return
-                loss_refl = refl_loss(rewards) * args.grad_scale
+                loss_refl = refl_loss(rewards) 
                 
-                loss = loss_refl + loss_offline
+                loss = (loss_refl + loss_offline) * args.grad_scale
                 
                 # Gather the losses across all processes for logging (if we use distributed training).
                 avg_loss = accelerator.gather(loss.repeat(args.train_batch_size)).mean()

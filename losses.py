@@ -19,10 +19,11 @@ def rank_loss(rewards):
     # view 第一行是 simple, 第二行是 complex
     
     rewards = rewards.view(-1, 2)
-    
+    print(rewards)
     reward_diff = rewards[1, :] - rewards[0, :]
     
-    loss = -torch.log(torch.sigmoid(reward_diff)).mean()
+    # loss = -torch.log(torch.sigmoid(reward_diff)).mean()
+    loss = 4 - reward_diff.mean()
     
     return loss
 
@@ -50,8 +51,17 @@ def rank_offline_loss(rewards):
 # offline loss
 def rank_offline_loss2(rewards):
     # rewards: [num_rank, bsz]
-    loss_offline = rewards
-    print(loss_offline)
+    num_rank = rewards.size(0)
+    loss_offline = 0
+    K = num_rank * (num_rank - 1) / 2 if num_rank > 1 else  1
+    for i in range(num_rank):
+        for j in range(i+1, num_rank):
+            loss_offline += rewards[i,:] - rewards[j,:]
+    
+    loss_offline = loss_offline / K
+    loss_offline = F.relu(4 - loss_offline)
+    loss_offline = loss_offline.mean()
+
     return loss_offline     
     
 

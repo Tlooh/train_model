@@ -31,8 +31,8 @@ class Eval_Dataset(Dataset):
     
     def __getitem__(self, index):
         item = self.data[index]
-        id = item['idx']
-        text = item['text']
+        id = item['id']
+        text = item['prompt']
         imgs = [os.path.join(model_dir, f"{id}.png") for model_dir in self.model_list]
 
         return id, text, imgs

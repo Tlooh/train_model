@@ -50,7 +50,7 @@ except ImportError:
     BICUBIC = Image.BICUBIC
 
 from dataset import S2C_Dataset_BLIP
-from utils import ImageReward_load
+from utils import ImageReward_load,BLIPReward_load
 from losses import *
 
 if is_wandb_available():
@@ -433,7 +433,8 @@ def main():
     unet = UNet2DConditionModel.from_pretrained(
         args.pretrained_model_name_or_path, subfolder="unet", revision=args.non_ema_revision
     )
-    reward_model = ImageReward_load("/data/liutao/checkpoints/ImageReward/ImageReward.pt", device = accelerator.device)
+    # reward_model = ImageReward_load("/data/liutao/checkpoints/ImageReward/ImageReward.pt", device = accelerator.device)
+    reward_model = BLIPReward_load("/data/liutao/checkpoints/BLIPReward/bs32_lr=5e-06_nce_s2c/best_acc=0.9236350576082866.pt", device = accelerator.device)
 
     # Freeze vae and text_encoder and set unet to trainable
     vae.requires_grad_(False)
@@ -652,6 +653,7 @@ def main():
                     progress_bar.update(1)
                 continue
             with accelerator.accumulate(unet):
+                # 前半个 batch 为 simple，后半个为 complex
                 # concat simple and complex input_ids [4,1,77]->[4,77]
                 batch["input_ids"] = torch.cat([batch['simple_input_ids'], batch['complex_input_ids']], dim = 0).squeeze(1)
                 # print(batch['simple_input_ids'].shape)
@@ -701,20 +703,25 @@ def main():
                 rm_preprocess = _transform()
                 image = rm_preprocess(image).to(accelerator.device)
 
-                # image: [bsz * 2, 3, 224, 224]
+                # image: [bsz * 2,3,224,224],前半个batch为simple，后半个为 complex
                 # rm_input_ids [bsz * 2, 35]
                 # rm_attention_mask [bsz * 2, 35]
+
+                # batch['rm_simple_input_ids'] [bsz,1, 35]
+                # simple 和complex 分别为参照
                 batch["rm_input_ids"] = torch.cat([batch['rm_simple_input_ids'], batch['rm_complex_input_ids']], dim = 0).squeeze(1)
                 batch["rm_attention_mask"] = torch.cat([batch['rm_simple_mask'], batch['rm_complex_mask']], dim = 0).squeeze(1)
-                # print(batch["rm_simple_input_ids"].shape)
-                # print(batch["rm_attention_mask"].shape)
+                # 全部以 simple 为参照
+                # batch["rm_input_ids"] = torch.cat([batch['rm_simple_input_ids'], batch['rm_simple_input_ids']], dim = 0).squeeze(1)
+                # batch["rm_attention_mask"] = torch.cat([batch['rm_simple_mask'], batch['rm_simple_mask']], dim = 0).squeeze(1)
                 
                 rewards = reward_model.score_gard(batch["rm_input_ids"], batch["rm_attention_mask"], image) #[bsz, 1]
-
-                rank_loss = rank_loss(rewards)
-                refl_loss = refl_loss(rewards) * args.grad_scale
+    
+                loss_rank = rank_loss(rewards) * args.grad_scale
                 
-                loss = rank_loss
+                # loss_refl = refl_loss(rewards) * args.grad_scale
+                
+                loss = loss_rank
                 # loss = F.relu(-rewards+2)
                 # loss = loss.mean() * args.grad_scale
 
